@@ -16,6 +16,7 @@ export default class Component extends UIComponent {
 	public init() : void {
 		// call the base component's init function
 		super.init();
+		this.getRouter().initialize()
 	}
 
 	/**

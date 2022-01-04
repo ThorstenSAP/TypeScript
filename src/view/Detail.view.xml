@@ -1,0 +1,15 @@
+<mvc:View
+	controllerName="ui5.typescript.helloworld.controller.Detail"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+		<Page>
+			<content>
+				<Button
+					text="Say Hello"
+					press="sayHello" />
+			</content>
+		</Page>
+
+</mvc:View>

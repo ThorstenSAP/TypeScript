@@ -34,7 +34,7 @@
 			"viewName": "ui5.typescript.helloworld.view.App",
 			"type": "XML",
 			"async": true,
-			"id": "app"
+			"id": "flexibleColumnLayout"
 		},
 
 		"dependencies": {
@@ -43,7 +43,8 @@
 				"sap.ui.core": {},
 				"sap.ui.layout": {},
 				"sap.ui.unified": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.f": {}
 			}
 		},
 
@@ -59,7 +60,34 @@
 		},
 
 		"routing": {
-			
+			"config": {
+				"routerClass": "sap.f.routing.Router",
+				"viewType": "XML",
+				"viewPath": "ui5.typescript.helloworld.view",
+				"controlId": "flexibleColumnLayout",
+				"controlAggregation": "beginColumnPages",
+				"transition": "slide",
+				"async": true
+			  },
+			  "routes": [
+				{
+				  "name": "RouteMain",
+				  "pattern": "",
+				  "target": ["TargetMain", "TargetDetail"]
+				}
+			  ],
+			  "targets": {
+				"TargetMain": {
+				  "viewType": "XML",
+				  "controlAggregation": "beginColumnPages",
+				  "viewName": "Main"
+				},
+				"TargetDetail": {
+				  "viewType": "XML",
+				  "controlAggregation": "midColumnPages",
+				  "viewName": "Detail"
+				}
+			  }
 		}
 	}
 }
